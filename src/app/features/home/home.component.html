@@ -1,0 +1,89 @@
+<section class="hero">
+  <div class="wrap hero__inner">
+    <span class="eyebrow eyebrow--on-dark">N&D Forge Publishers &middot; Independent Press &middot; Est. 2005</span>
+    <h1 class="hero__title">Stories,<br /><em>forged</em> to last.</h1>
+    <p class="hero__desc">
+      We publish literary and historical fiction, poetry, memoir, essays, and thrillers —
+      books built the slow way, from writers we back for the long run.
+    </p>
+    <div class="ember-rule"></div>
+    <div class="hero__actions">
+      <a class="btn btn--primary" routerLink="/" fragment="catalog">Browse the catalog</a>
+      <a class="btn btn--ghost-dark" routerLink="/contact" fragment="submissions">Submit a manuscript</a>
+    </div>
+
+    <dl class="hero__stats">
+      <div><dt>{{ books().length }}+</dt><dd>Titles in print</dd></div>
+      <div><dt>6</dt><dd>Genres we publish</dd></div>
+      <div><dt>2005</dt><dd>Founded</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">This Season</span>
+      <h2>Featured titles</h2>
+      <p>New and recent books our editors are putting front of house.</p>
+    </div>
+    <div class="grid grid--featured">
+      @for (book of featured; track book.slug) {
+        <forge-book-card [book]="book" />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--parchment-soft" id="catalog">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Full Catalog</span>
+      <h2>Every book we've published</h2>
+      <p>Browse the complete list — click any title for the full description, specs, and formats.</p>
+    </div>
+    <div class="grid grid--catalog">
+      @for (book of books(); track book.slug) {
+        <forge-book-card [book]="book" />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Publish</span>
+      <h2>Six genres, one standard</h2>
+      <p>Every list we run is small on purpose. Here's what we're currently acquiring in each category.</p>
+    </div>
+    <div class="genre-grid">
+      @for (entry of genreEntries; track entry[0]) {
+        <div class="genre-card">
+          <span class="genre-card__swatch" [style.background]="'var(' + entry[1].cssVar + ')'"></span>
+          <h3>{{ entry[0] }}</h3>
+          <p>{{ entry[1].blurb }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--char">
+  <div class="wrap authors-cta">
+    <div>
+      <span class="eyebrow eyebrow--on-dark">For Authors</span>
+      <h2>We read everything we ask for.</h2>
+      <p>
+        We acquire six to ten titles a year, which means every manuscript that clears our
+        submission guidelines gets a real read from an editor — not a form rejection from
+        an inbox. If your book fits one of our six genres, we want to see it.
+      </p>
+      <div class="ember-rule"></div>
+      <div class="authors-cta__actions">
+        <a class="btn btn--primary" routerLink="/contact" fragment="submissions">Read the submission guidelines</a>
+        <a class="btn btn--ghost-dark" routerLink="/about">More about Forge</a>
+      </div>
+    </div>
+  </div>
+</section>

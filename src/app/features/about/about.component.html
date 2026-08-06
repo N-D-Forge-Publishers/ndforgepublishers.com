@@ -1,0 +1,89 @@
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow eyebrow--on-dark">About</span>
+    <h1>An independent press, built to stay small.</h1>
+    <p>
+      Forge Publishers has spent two decades publishing fewer books, more carefully.
+      We're editor-owned, we acquire directly, and we stay involved with a book long
+      after its publication date.
+    </p>
+    <div class="ember-rule"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap two-col">
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2>Why "Forge"</h2>
+      <p>
+        We named the press for the process, not the product. A forge doesn't shape metal in
+        one strike — it heats, hammers, and tempers, again and again, until the material
+        holds its new shape on its own. That's how we try to work with a manuscript: slow,
+        deliberate passes, not a single edit and a release date.
+      </p>
+      <p>
+        We publish six to ten books a year across six genres. That number is a ceiling we
+        chose on purpose — it's what lets every book on our list get a real editor, a real
+        publicity plan, and a real chance.
+      </p>
+    </div>
+    <div>
+      <span class="eyebrow">What We Look For</span>
+      <h2>Our standard</h2>
+      <p>
+        We're not chasing trends or a single house style. What we look for across every
+        genre is the same: precise sentences, a clear sense of what the book is actually
+        about, and a writer willing to revise. If that sounds like your manuscript, read
+        our <a routerLink="/contact" fragment="submissions">submission guidelines</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--parchment-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">History</span>
+      <h2>Two decades, in five dates</h2>
+    </div>
+    <ol class="timeline">
+      @for (m of milestones; track m.year) {
+        <li>
+          <span class="timeline__year">{{ m.year }}</span>
+          <span class="timeline__text">{{ m.text }}</span>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Editorial Team</span>
+      <h2>Who reads your manuscript</h2>
+      <p>A small, working editorial team — no reading fees, no first readers you'll never meet.</p>
+    </div>
+    <div class="team-grid">
+      @for (person of team; track person.name) {
+        <div class="team-card">
+          <div class="team-card__mark">{{ person.name.charAt(0) }}</div>
+          <h3>{{ person.name }}</h3>
+          <p class="team-card__role">{{ person.role }}</p>
+          <p class="team-card__bio">{{ person.bio }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--char">
+  <div class="wrap cta-band">
+    <div>
+      <h2>Have a manuscript in mind?</h2>
+      <p>We're currently reading in all six genres.</p>
+    </div>
+    <a class="btn btn--primary" routerLink="/contact" fragment="submissions">Submit a manuscript</a>
+  </div>
+</section>

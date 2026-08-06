@@ -1,0 +1,66 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="wordmark">
+        <span class="wordmark__mark">FORGE</span>
+        <span class="wordmark__sub">Publishers</span>
+      </div>
+      <p class="footer-brand__desc">
+        An independent press publishing literary fiction, historical fiction, poetry,
+        memoir, essays, and thrillers.
+      </p>
+      <p class="footer-brand__addr">
+        118 Foundry Row, Suite 4<br />
+        Providence, RI 02903
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-col__title">Explore</h3>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/" fragment="catalog">Catalog</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-col__title">For Authors</h3>
+      <ul>
+        <li><a routerLink="/contact" fragment="submissions">Submission Guidelines</a></li>
+        <li><a routerLink="/contact" fragment="rights">Rights &amp; Permissions</a></li>
+        <li><a routerLink="/about" fragment="team">Our Editors</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-col--newsletter">
+      <h3 class="footer-col__title">Stay in Print</h3>
+      @if (subscribed()) {
+        <p class="newsletter-success">You're on the list — thank you.</p>
+      } @else {
+        <form class="newsletter-form" (submit)="subscribe(); $event.preventDefault()">
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            [(ngModel)]="email"
+            required
+          />
+          <button class="btn btn--primary" type="submit">Sign up</button>
+        </form>
+        <p class="newsletter-note">One email a month. New titles, no noise.</p>
+      }
+    </div>
+  </div>
+
+  <div class="wrap footer-legal">
+    <p>&copy; {{ year }} Forge Publishers. All rights reserved.</p>
+    <div class="footer-legal__links">
+      <a routerLink="/contact">Privacy</a>
+      <a routerLink="/contact">Terms</a>
+    </div>
+  </div>
+</footer>

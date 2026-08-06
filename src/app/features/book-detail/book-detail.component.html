@@ -1,0 +1,41 @@
+@if (book(); as b) {
+  <section class="section detail">
+    <div class="wrap detail__grid">
+      <div class="cover" [style.--accent]="'var(' + genreVar() + ')'">
+        <span class="cover__spine"></span>
+        <span class="cover__genre">{{ b.genre }}</span>
+        <span class="cover__initials">{{ initials() }}</span>
+        <span class="cover__title">{{ b.title }}</span>
+        <span class="cover__author">{{ b.author }}</span>
+      </div>
+
+      <div class="detail__content">
+        <a class="back-link" routerLink="/" fragment="catalog">&larr; Back to catalog</a>
+        <span class="tag" [style.background]="'var(' + genreVar() + ')'">{{ b.genre }}</span>
+        <h1>{{ b.title }}</h1>
+        <p class="detail__author">by {{ b.author }} &middot; {{ b.year }}</p>
+        <p class="detail__desc">{{ b.description }}</p>
+
+        <dl class="specs">
+          <div><dt>Price</dt><dd>{{ b.price }}</dd></div>
+          <div><dt>Pages</dt><dd>{{ b.pages }}</dd></div>
+          <div><dt>ISBN</dt><dd>{{ b.isbn }}</dd></div>
+          <div><dt>Formats</dt><dd>{{ b.formats.join(', ') }}</dd></div>
+        </dl>
+
+        <div class="detail__actions">
+          <a class="btn btn--primary" routerLink="/contact">Request review copy</a>
+          <a class="btn btn--ghost-light" routerLink="/contact" fragment="rights">Rights &amp; permissions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+} @else {
+  <section class="section not-found">
+    <div class="wrap">
+      <h1>We couldn't find that title.</h1>
+      <p>It may have been renamed or removed from the catalog.</p>
+      <a class="btn btn--primary" routerLink="/" fragment="catalog">Back to the catalog</a>
+    </div>
+  </section>
+}

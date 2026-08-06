@@ -1,0 +1,111 @@
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow eyebrow--on-dark">Contact</span>
+    <h1>Talk to Forge.</h1>
+    <p>General questions, submissions, rights requests, or press — all of it starts here.</p>
+    <div class="ember-rule"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <div class="contact-form-col">
+      <h2>Send a message</h2>
+      @if (submitted()) {
+        <div class="success-panel">
+          <h3>Message sent.</h3>
+          <p>Thanks for writing in — we reply to every message within a few business days.</p>
+        </div>
+      } @else {
+        <form class="contact-form" (submit)="submit(); $event.preventDefault()">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" [(ngModel)]="form.name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" [(ngModel)]="form.email" required />
+          </div>
+          <div class="field">
+            <label for="reason">Reason</label>
+            <select id="reason" name="reason" [(ngModel)]="form.reason">
+              <option>General inquiry</option>
+              <option>Manuscript submission</option>
+              <option>Rights & permissions</option>
+              <option>Press</option>
+              <option>Bookstore / distributor</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" [(ngModel)]="form.message" required></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Send message</button>
+        </form>
+      }
+    </div>
+
+    <aside class="contact-info-col">
+      <div class="info-block">
+        <h3>Office</h3>
+        <p>118 Foundry Row, Suite 4<br />Providence, RI 02903</p>
+      </div>
+      <div class="info-block">
+        <h3>General</h3>
+        <p><a href="mailto:hello@forgepublishers.example">hello&#64;forgepublishers.example</a></p>
+      </div>
+      <div class="info-block">
+        <h3>Press</h3>
+        <p><a href="mailto:press@forgepublishers.example">press&#64;forgepublishers.example</a></p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Monday&ndash;Friday, 9am&ndash;5pm ET<br />Replies within 3&ndash;5 business days</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--parchment-soft" id="submissions">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">For Authors</span>
+      <h2>Submission guidelines</h2>
+      <p>We read unsolicited manuscripts in all six genres, year-round.</p>
+    </div>
+    <div class="guidelines-grid">
+      <div class="guideline-card">
+        <h3>What to send</h3>
+        <p>A one-page query letter, a synopsis, and the first 30 pages (or 5 poems for
+        poetry) as a single PDF.</p>
+      </div>
+      <div class="guideline-card">
+        <h3>Where to send it</h3>
+        <p>Email everything to
+          <a href="mailto:submissions@forgepublishers.example">submissions&#64;forgepublishers.example</a>
+          with your genre in the subject line.</p>
+      </div>
+      <div class="guideline-card">
+        <h3>Response time</h3>
+        <p>We aim to respond to every query within 8&ndash;10 weeks. Simultaneous
+        submissions are fine — just let us know.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rights">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Rights &amp; Permissions</span>
+      <h2>Translation, film, and reprint rights</h2>
+      <p>
+        For foreign rights, film and TV options, audio rights, or permission to reprint an
+        excerpt, email
+        <a href="mailto:rights@forgepublishers.example">rights&#64;forgepublishers.example</a>
+        with the title, the rights you're requesting, and your intended use.
+      </p>
+    </div>
+  </div>
+</section>

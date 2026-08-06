@@ -1,0 +1,19 @@
+<a class="card" [routerLink]="['/books', book().slug]">
+  <div class="cover" [style.--accent]="'var(' + genreVar() + ')'">
+    <span class="cover__spine"></span>
+    <span class="cover__genre">{{ book().genre }}</span>
+    <span class="cover__initials">{{ initials() }}</span>
+    <span class="cover__title">{{ book().title }}</span>
+    <span class="cover__author">{{ book().author }}</span>
+  </div>
+
+  <div class="meta">
+    <h3 class="meta__title">{{ book().title }}</h3>
+    <p class="meta__author">{{ book().author }}</p>
+    <p class="meta__synopsis">{{ book().synopsis }}</p>
+    <div class="meta__row">
+      <span class="tag" [style.background]="'var(' + genreVar() + ')'">{{ book().genre }}</span>
+      <span class="meta__price">{{ book().price }}</span>
+    </div>
+  </div>
+</a>

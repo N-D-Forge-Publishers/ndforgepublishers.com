@@ -1,0 +1,119 @@
+.page-hero {
+  background: var(--color-char);
+  color: var(--color-parchment-soft);
+  padding: clamp(56px, 9vw, 96px) 0 clamp(48px, 7vw, 72px);
+}
+.page-hero h1 {
+  margin-top: 18px;
+  max-width: 18ch;
+  font-size: clamp(36px, 5.5vw, 58px);
+  line-height: 1.06;
+  color: var(--color-parchment-soft);
+}
+.page-hero p {
+  margin-top: 22px;
+  max-width: 58ch;
+  font-size: 17.5px;
+  line-height: 1.65;
+  color: rgba(237, 230, 214, 0.8);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 80px);
+}
+.two-col h2 { margin-top: 12px; font-size: 26px; }
+.two-col p { margin-top: 14px; color: var(--color-ink-soft); line-height: 1.65; }
+.two-col a { color: var(--color-ember); border-bottom: 1px solid currentColor; }
+@media (max-width: 760px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+.section--parchment-soft { background: var(--color-parchment-soft); }
+
+.timeline {
+  border-left: 2px solid var(--color-line);
+  max-width: 640px;
+}
+.timeline li {
+  position: relative;
+  padding: 0 0 30px 28px;
+}
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-ember);
+}
+.timeline__year {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--color-brass);
+  margin-bottom: 4px;
+}
+.timeline__text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.team-card {
+  padding: 28px 24px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+}
+.team-card__mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-ember);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.team-card h3 { font-size: 18px; }
+.team-card__role {
+  margin-top: 4px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+}
+.team-card__bio {
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--color-ink-soft);
+}
+@media (max-width: 760px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
+
+.cta-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.cta-band h2 { color: var(--color-parchment-soft); font-size: 26px; }
+.cta-band p { margin-top: 6px; color: rgba(237, 230, 214, 0.7); }
